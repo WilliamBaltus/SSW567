@@ -1,6 +1,9 @@
 def classify_triangle(a,b,c):
-    #inputs should all be numbers, and therefore not of type 'str'
     triangles = ['Equilateral triangle', 'Isosceles triangle', 'Scalene triangle', 'Right triangle', 'Invalid triangle']
+    #inputs should all be numbers, and therefore not of type 'str'
+    if(not(isinstance(a, int) and isinstance(b, int) and isinstance(c, int))):
+        return triangles[4]
+
     intA = int(a)
     intB = int(b)
     intC = int(c)
@@ -53,5 +56,5 @@ def get_input(side_number):
 
 if __name__ == '__main__':
     # examples of running the code
-    classify_triangle(1,2,3)
+    classify_triangle(1,2,'a')
     classify_triangle(1,1,1)
